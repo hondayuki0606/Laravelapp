@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-$html = <<<EOF
+
+Route::get('hello/{msg}',function($msg){
+    $html = <<<EOF
 <html>
 <head>
 <title>Hello</title>
@@ -34,11 +36,38 @@ h1 {font-size:100pt;
 </head>
 <body>
     <h1>Hello</h1>
-    <p>This is sample page.</p>
+    <p>{$msg} is sample page.</p>
     <p>これはサンプルで作ったページです。</p>
 </body>
 </html>
 EOF;
-Route::get('hello',function() use ($html){
+    return $html;
+});
+
+
+Route::get('hello2/{id}/{pass}',function($id,$pass){
+    $html = <<<EOF
+<html>
+<head>
+<title>Hello</title>
+<style>
+body {font-size:16pt;
+      color:#999;
+}
+h1 {font-size:100pt;
+    text-align:right;
+    color:#888;
+    margin:-40px 0px -50px 0px;
+}
+</style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>{$id} is id page.</p>
+    <p>{$pass} is pass page.</p>
+    <p>これはサンプルで作ったページです。</p>
+</body>
+</html>
+EOF;
     return $html;
 });
