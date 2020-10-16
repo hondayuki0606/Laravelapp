@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('hello','HelloController@index');
-Route::get('hello4','App\Http\Controllers\HelloController@index');
+Route::get('hello4/{id?}/{pass?}','App\Http\Controllers\HelloController@index');
 
 Route::get('hello2/{id}/{pass}',function($id,$pass){
     $html = <<<EOF
