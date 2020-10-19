@@ -23,7 +23,11 @@ function tag($tag, $txt){
 }
 class HelloController extends Controller
 {
-    public function inde(){
+    public function index(){
+        global $head, $style, $body, $end;
+    }
 
+    public function other(){
+        global $head, $style, $body, $end;
     }
 }
