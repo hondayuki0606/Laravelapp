@@ -17,12 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// 修正出来たらWEBブラウザでHelloにアクセスしてみてください。
-// そして、go to Other page のリンクをクリックしてみましょう。
-// hello/otherに移動し、このページの表示が現れます。
-Route::get('hello','App/Http/Controllers/HelloController@index');
-Route::get('hello/other','App/Http/Controllers/HelloController@other');
-// Route::get('hello','HelloController@index');
+Route::get('hello','App\Http\Controllers\HelloController');
+// 同じアクションを呼び出す処理を記述するとエラーになる。
+Route::get('hello/other','App\Http\Controllers\HelloController@other');
+//Route::get('hello','HelloController@index');
 Route::get('hello4/{id?}/{pass?}','App\Http\Controllers\HelloController@index');
 
 Route::get('hello2/{id}/{pass}',function($id,$pass){

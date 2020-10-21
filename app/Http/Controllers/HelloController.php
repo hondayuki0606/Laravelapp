@@ -23,24 +23,27 @@ function tag($tag, $txt){
 }
 class HelloController extends Controller
 {
-    public function index(){
+    public function __invoke()
+    {
         global $head, $style, $body, $end;
         $html = $head . tag('title','Hello/Index') . $style .
                 $body
                 . tag('h1','Index') . tag('p','this is Index page')
-                . '<a href="/hello/other">go to Other page</a>'
+                . '<a href="/laravelapp/public/hello/other">go to Other page</a>'
                 . $end;
         return $html;
-
+ 
     }
-    public function other(){
+    public function other()
+    {
         global $head, $style, $body, $end;
-        $html = $head . tag('title','Hello/Other') . $style .
+        $html = $head . tag('title','Hello/Index') . $style .
                 $body
-                . tag('h1', 'Other') . tag('p','this is Other page')
+                . tag('h1','Index') . tag('p','this is Index page')
+                . '<a href="/laravelapp/public/hello/other">go to Other page</a>'
                 . $end;
         return $html;
-
+ 
     }
 // コントローラに記述できたら、続けてルーティングも用意しておきましょう。
 // web.phpに用意したHelloController@indexのルートを削除し、以下に新たに追記してください。
