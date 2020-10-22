@@ -37,9 +37,9 @@ class HelloController extends Controller
     public function other()
     {
         global $head, $style, $body, $end;
-        $html = $head . tag('title','Hello/Index') . $style .
+        $html = $head . tag('title','Hello/Other') . $style .
                 $body
-                . tag('h1','Index') . tag('p','this is Index page')
+                . tag('h1','Other') . tag('p','this is Other page')
                 . '<a href="/laravelapp/public/hello/other">go to Other page</a>'
                 . $end;
         return $html;
@@ -47,4 +47,5 @@ class HelloController extends Controller
     }
 // コントローラに記述できたら、続けてルーティングも用意しておきましょう。
 // web.phpに用意したHelloController@indexのルートを削除し、以下に新たに追記してください。
+// test
 }
