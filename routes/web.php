@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello','App\Http\Controllers\HelloController');
+// response,requestの呼び出し
+Route::get('hello','App\Http\Controllers\HelloController@index');
+
+//Route::get('hello','App\Http\Controllers\HelloController');
 // 同じアクションを呼び出す処理を記述するとエラーになる。
 Route::get('hello/other','App\Http\Controllers\HelloController@other');
 //Route::get('hello','HelloController@index');
