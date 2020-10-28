@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('hello', function () {
-    return view('hello.index');
-});
+// Viewメソッドでテンプレートを表示する
+// Route::get('hello', function () {
+//     return view('hello.index');
+// });
 
+// コントローラーでテンプレートを使う
+Route::get('hello', 'App\Http\Controllers\HelloController@index');
 // response,requestの呼び出し
 //Route::get('hello','App\Http\Controllers\HelloController@index');
 
