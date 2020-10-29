@@ -27,8 +27,11 @@ function tag($tag, $txt){
 class HelloController extends Controller
 {
     public function index(){
-        return view('hello.index');
+        $data = ['msg'=>'これはコントローラから渡されたメッセージです。'];
+        return view('hello.index',$data);
     }
+
+
     public function __invoke()
     {
         global $head, $style, $body, $end;
