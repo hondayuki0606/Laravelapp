@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Viewメソッドでテンプレートを表示する
-// Route::get('hello', function () {
+// Route::get('hello/{id?}', function () {
 //     return view('hello.index');
 // });
 
 // コントローラーでテンプレートを使う
-Route::get('hello', 'App\Http\Controllers\HelloController@index');
+Route::get('hello/{id?}', 'App\Http\Controllers\HelloController@index');
 // response,requestの呼び出し
 //Route::get('hello','App\Http\Controllers\HelloController@index');
 
