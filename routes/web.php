@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // コントローラーでテンプレートを使う
-Route::get('hello/{id?}', 'App\Http\Controllers\HelloController@index');
+//Route::get('hello/{id?}', 'App\Http\Controllers\HelloController@index');
+// P66 クエリ―文字列の利用
+Route::get('hello/', 'App\Http\Controllers\HelloController@index');
 // response,requestの呼び出し
 //Route::get('hello','App\Http\Controllers\HelloController@index');
 
