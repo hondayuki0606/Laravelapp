@@ -26,10 +26,10 @@ function tag($tag, $txt){
 }
 class HelloController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $data = ['msg'=>'これはコントローラから渡されたメッセージです。',
-                 'id'=>$request->id
+        $data = [
+            'msg'=>'これはコントローラから渡されたメッセージです。',
                 ];
         return view('hello.index',$data);
     }
