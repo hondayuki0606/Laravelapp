@@ -10,5 +10,10 @@ h1{ font-size:100px; }
 <body>
 <h1>Index/blade</h1>
 <p>{{$msg}}</p>
+<form method="POST" action="/hello">
+@csrf
+<input type="text" name="msg">
+<input type="submit">
+</form>
 </body>
 </html>

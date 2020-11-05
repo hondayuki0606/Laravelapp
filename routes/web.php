@@ -24,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('hello/', 'App\Http\Controllers\HelloController@index');
 // response,requestの呼び出し
 //Route::get('hello','App\Http\Controllers\HelloController@index');
-
+// POSTのルート設定
+Route::post('hello/', 'App\Http\Controllers\HelloController@post');
 //Route::get('hello','App\Http\Controllers\HelloController');
 // 同じアクションを呼び出す処理を記述するとエラーになる。
 Route::get('hello/other','App\Http\Controllers\HelloController@other');
