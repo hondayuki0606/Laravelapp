@@ -10,6 +10,7 @@ h1{ font-size:100px; }
 <body>
 <h1>Index</h1>
 <p><?php echo $msg; ?></p>
+<p><?php echo $msg; ?></p>
 <p>ID=<?php echo $id; ?></p>
 </body>
 </html>
