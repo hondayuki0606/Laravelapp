@@ -9,11 +9,11 @@ h1{ font-size:100px; }
 </head>
 <body>
 <h1>Index/blade</h1>
-@if ($msg != '')
-<p>あなたの名前は、{{$msg}}さんですね。</p>
+@isset($msg)
+<p>こんにちは、{{$msg}}さん</p>
 @else
 <p>何か入れてください</p>
-@endif
+@endisset
 <form method="POST" action="/hello">
     @csrf
     <input type="text" name="msg">
