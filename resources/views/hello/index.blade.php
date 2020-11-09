@@ -9,15 +9,11 @@ h1{ font-size:100px; }
 </head>
 <body>
 <h1>Index/blade</h1>
-@isset($msg)
-<p>こんにちは、{{$msg}}さん</p>
-@else
-<p>何か入れてください</p>
-@endisset
-<form method="POST" action="/hello">
-    @csrf
-    <input type="text" name="msg">
-    <input type="submit">
-</form>
+<p>&#064;foreachディレクティブの例</p>
+<ol>
+@foreach($data as $item)
+<li>{{$item}}
+@endforeach
+</ol>
 </body>
 </html>
