@@ -11,9 +11,15 @@ h1{ font-size:100px; }
 <h1>Index/blade</h1>
 <p>&#064;foreachディレクティブの例</p>
 <ol>
-@foreach($data as $item)
-<li>{{$item}}
-@endforeach
+@for ($i=1;$i<100;$i++)
+@if($i % 2 == 1)
+    @continue
+@elseif($i <= 10)
+<li>No,{{$i}}
+@else
+    @break
+@endif
+@endfor
 </ol>
 </body>
 </html>
