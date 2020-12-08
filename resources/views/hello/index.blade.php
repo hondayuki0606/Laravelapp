@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hello/Index</title>
-<p>&#064;whiteのディレクティブ例</p>
-<ol>
-    @php
-    $counter = 0;
-    @endphp
-    @while ($counter < count($data))
-    <li>{{$data[$counter]}}</li>
-    @php
-    $counter++;
-    @endphp
-    @endwhile
-</ol>
+</head>
+<body>
+    <!-- ＠extendsについて
+    まず最初に用意すべきは、レイアウトの継承設定です。
+    これは下記のように記述できます -->
+    @extends('layouts.helloapp')
+    <!-- これで「layout」フォルダ内の「helloapp.blade.php」という
+    レイアウトファイルをロードし、親レイアウトとして継承します。
+    これがないとレイアウトの継承そのものが機能しなくなりますので
+    注意してください。 -->
+    <!-- ＠sectionの書き方
+    続いて、＠sectionの表示内容の書き方です。これには2通りあります
+    1つはタイトルの表示に使った書き方です -->
+    @section('titile','Index')
+    <!-- 単純にテキストや数字などをセクションに表示させるだけなら
+    ＠sectionの引数内に、当てはめるセクション名とそこに表示する値
+    をそれぞれ引数に用意します。
+    今回はtitleという名前のセクションにIndexというテキスト値を
+    設定します。もう1つは書き方は＠endsectionを併用した書き方です。 -->
+    @section('menubar')
+    @parent
+    インデックスページ
+    @endsection
+
+    @section('content')
+    <p>ここが本文のコンテンツ</p>
+    <p>必要なだけ記述できます。</p>
+    @endsection
+
+    @section('footer')
+    copyright 2020 tuyano.
+    @endsection
 </body>
 </html>
