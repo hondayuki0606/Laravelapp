@@ -30,6 +30,16 @@
     <p>必要なだけ記述できます。</p>
     @endsection
 
+    @coomponent('components.message')
+        @slot('msg_title')
+        CAUTION!
+        @endslot
+
+        @slot('msg_content')
+        これはメッセージの表示です。
+        @endslot
+    @endcomponent
+
     @section('footer')
     copyright 2020 tuyano.
     @endsection
